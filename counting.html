@@ -1,0 +1,92 @@
+<html>
+
+    <head>
+        <style>
+            .red-box{
+                width:640px;
+                height:732px;
+                background:red;
+            }
+            .blue-box{
+                width:200px;
+                height:200px;
+                background:blue;
+                position:relative;
+                margin:auto;
+                top:266px;
+                
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="red-box">
+            <div class="blue-box"></div>
+        </div>
+        <script>
+            //Program that prints numbers from 1 to 100 and printing Fizz, Buzz and FizzBuzz as described in question.
+            //Beginning of Code
+for(i=1;i<=100;i++)
+{
+    //Checking for mode 5 and 3
+    if(i%5===0 && i%3===0){
+        console.log("FizzBuzz");
+        //Checking for mode 5
+    }else if(i%5===0){
+        console.log("Buzz");
+        //Checking for mode 3
+    }else if(i%3===0){
+        console.log("Fizz");
+    }else{
+        //Else case
+        console.log(i);
+    }
+}
+//End of Code
+
+var json=[{
+    "page":1,
+    "totalpages":5,
+    "data":[{
+        "title":"Movie 1",
+        "rating":4.7
+    },
+    {
+        "title":"Movie 2",
+        "rating":7.8
+    }]
+},{
+     "page":2,
+    "totalpages":5,
+    "data":[{
+        "title":"Movie 3",
+        "rating":5
+    },
+    {
+        "title":"Movie 4",
+        "rating":7
+    }]
+}];
+var sum=0;
+var count=0;
+var max=0;
+for (dat in json){
+    for(d in json[dat].data){
+        sum+= json[dat].data[d].rating;
+        count++;
+        if(json[dat].data[d].rating>max){
+            max= json[dat].data[d].rating;
+        }
+        console.log(json[dat].data[d].rating);
+    }
+    
+}
+avg=Math.round((sum/count),2);
+console.log("Average rating: "+avg);
+console.log("Maximum rating: "+max);
+
+</script>
+    </body>
+
+</html>
